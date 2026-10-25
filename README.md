@@ -138,35 +138,27 @@ cd PublicComplaintPriorityAnalyzer
 
 ---
 
-### 🔨 Step 2 — Compile the Source Code
-
-**On macOS / Linux:**
+### 🚀 Step 2 — Compile & Run (One Command)
 
 ```bash
-javac -d out $(find src -name "*.java")
+javac -d out -sourcepath src src\com\complaint\Main.java; java -cp out com.complaint.Main
 ```
 
-**On Windows (Command Prompt):**
-
-```cmd
-dir /s /b src\*.java > sources.txt
-javac -d out @sources.txt
-```
-
-**On Windows (PowerShell):**
-
-```powershell
-$files = Get-ChildItem -Path src -Recurse -Filter "*.java" | Select-Object -ExpandProperty FullName
-javac -d out $files
-```
-
-> 📝 The -d out flag places all compiled .class files into the out/ directory.
+> 💡 This single command **compiles** all source files into the `out/` folder and **immediately runs** the application.
 
 ---
 
-### 🚀 Step 3 — Run the Application
+### 🔨 Run Separately (Optional)
 
-**On macOS / Linux / Windows:**
+If you prefer to compile and run as separate steps:
+
+**Step 2a — Compile:**
+
+```bash
+javac -d out -sourcepath src src\com\complaint\Main.java
+```
+
+**Step 2b — Run:**
 
 ```bash
 java -cp out com.complaint.Main
@@ -180,9 +172,9 @@ You can also open and run the project directly in your preferred IDE:
 
 | IDE | Steps |
 |---|---|
-| **IntelliJ IDEA** | File → Open the project folder → Run Main.java |
-| **Eclipse** | File → Import → Existing Project → Run Main.java |
-| **VS Code** | Open folder → Install **Extension Pack for Java** → Run Main.java |
+| **IntelliJ IDEA** | File → Open the project folder → Run `Main.java` |
+| **Eclipse** | File → Import → Existing Project → Run `Main.java` |
+| **VS Code** | Open folder → Install **Extension Pack for Java** → Run `Main.java` |
 
 ---
 
