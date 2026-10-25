@@ -1,0 +1,224 @@
+<div align=center>
+
+# Public Complaint Priority Analyzer
+
+**A DSA-driven Java system for intelligently prioritizing, managing, and routing public complaints.**
+
+*Priority Management • Duplicate Detection • Team Dispatch • Route Optimization*
+
+![Java](https://img.shields.io/badge/Java-8%2B-orange?style=flat-square&logo=openjdk&logoColor=white)
+![DSA](https://img.shields.io/badge/Focus-DSA%20%26%20Algorithms-blue?style=flat-square)
+![Interface](https://img.shields.io/badge/Interface-Console-lightgrey?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+</div>
+
+---
+
+## 📌 Overview
+
+**Public Complaint Priority Analyzer** is a terminal-based Java application that applies Data Structures and Algorithms to a real-world complaint management problem.
+
+Instead of processing complaints simply in the order they are received, the system calculates a **dynamic priority score** based on factors such as severity, category, duplicate reports, complaint age, public impact, safety risk, location importance, peak hours, and SLA violations.
+
+The system then uses the most suitable DSA for each operation — from **Max-Heap** priority processing to **BFS** team discovery and **Dijkstra** route optimization.
+
+## ✨ Key Features
+
+- 🎯 Dynamic complaint prioritization
+- 🔍 Fast complaint search by ID
+- ♻️ Duplicate complaint detection
+- 🚨 SLA-based priority escalation
+- 🏆 Highest & Top-K priority complaints
+- 📊 Complaint, area & category statistics
+- 👷 Nearby team discovery
+- 🗺️ Fastest route calculation
+- 🔄 Complaint status management
+- 📋 Sorting by priority, date, area & status
+
+## 🧠 DSA Behind the Project
+
+| Requirement | DSA Used | Why? |
+|---|---|---|
+| Highest-priority complaint | Max-Heap | Fast access to the maximum priority |
+| Complaint search | HashMap | O(1) average lookup |
+| Duplicate detection | HashSet | O(1) average membership check |
+| Nearby team | BFS | Minimum-hop traversal |
+| Fastest route | Dijkstra | Weighted shortest path |
+| City representation | Graph (Adjacency List) | Efficient road-network representation |
+| Complaint ranking | Sorting (TimSort) | Complete ordered views |
+
+## ⚡ Complexity
+
+```text
+Max-Heap Peek       -> O(1)
+Heap Insert         -> O(log n)
+HashMap Search      -> O(1) average
+HashSet Lookup      -> O(1) average
+BFS                 -> O(V + E)
+Dijkstra            -> O((V + E) log V)
+Sorting             -> O(n log n)
+```
+
+## 🎯 Dynamic Priority Engine
+
+The complaint priority is calculated using multiple real-world factors:
+
+```text
+Priority Score =
+      Category
+    + Severity
+    + Duplicate Bonus
+    + Age Bonus
+    + Public Impact
+    + Safety Risk
+    + Location Importance
+    + Peak Hour
+    + SLA Violation
+```
+
+This allows the system to re-prioritize complaints as their situation changes, rather than treating priority as a fixed value.
+
+## 🏗️ Application
+
+### Public Side
+Citizens can submit complaints with relevant information such as:
+- Category
+- Severity
+- Area
+- Description
+- Public impact
+- Safety risk
+- Location type
+- Peak-hour condition
+
+The system performs duplicate detection, calculates priority, and stores the complaint for further processing.
+
+### Admin Side
+Officers can:
+- View the highest-priority complaint
+- View Top-K complaints
+- Search complaints
+- Sort complaints
+- Analyze statistics
+- Find nearby teams
+- Find the fastest route
+- Update complaint status
+
+## 🛠️ Tech Stack
+
+- **Language:** Java
+- **Concepts:** OOP, DSA, Algorithm Analysis
+- **Data Structures:** Max-Heap, HashMap, HashSet, Graph, Queue
+- **Algorithms:** BFS, Dijkstra, Sorting
+- **Interface:** Terminal / Console
+
+---
+
+## ▶️ How to Run the Project Locally
+
+### ✅ Prerequisites
+
+Make sure **Java (JDK 8 or above)** is installed on your system.
+
+```bash
+java -version
+```
+
+If not installed, download it from 👉 https://www.oracle.com/java/technologies/downloads/
+
+---
+
+### 📥 Step 1 — Clone the Repository
+
+```bash
+git clone https://github.com/Gnanendhiran/PublicComplaintPriorityAnalyzer.git
+cd PublicComplaintPriorityAnalyzer
+```
+
+---
+
+### 🔨 Step 2 — Compile the Source Code
+
+**On macOS / Linux:**
+
+```bash
+javac -d out $(find src -name "*.java")
+```
+
+**On Windows (Command Prompt):**
+
+```cmd
+dir /s /b src\*.java > sources.txt
+javac -d out @sources.txt
+```
+
+**On Windows (PowerShell):**
+
+```powershell
+$files = Get-ChildItem -Path src -Recurse -Filter "*.java" | Select-Object -ExpandProperty FullName
+javac -d out $files
+```
+
+> 📝 The -d out flag places all compiled .class files into the out/ directory.
+
+---
+
+### 🚀 Step 3 — Run the Application
+
+**On macOS / Linux / Windows:**
+
+```bash
+java -cp out com.complaint.Main
+```
+
+---
+
+### 🖥️ Run Using an IDE (Optional)
+
+You can also open and run the project directly in your preferred IDE:
+
+| IDE | Steps |
+|---|---|
+| **IntelliJ IDEA** | File → Open the project folder → Run Main.java |
+| **Eclipse** | File → Import → Existing Project → Run Main.java |
+| **VS Code** | Open folder → Install **Extension Pack for Java** → Run Main.java |
+
+---
+
+### 📁 Project Structure
+
+```
+PublicComplaintPriorityAnalyzer/
+├── src/
+│   └── com/
+│       └── complaint/
+│           ├── Main.java
+│           ├── model/
+│           ├── service/
+│           ├── dsa/
+│           └── ui/
+├── out/                  ← compiled classes (auto-created after compile step)
+├── PublicComplaint_Priority_Analyzer_Project_Report.pdf
+└── README.md
+```
+
+---
+
+## 💡 Project Highlights
+
+The core idea of this project is simple: **choose the right data structure for the operation that needs to be optimized.**
+
+- **Max-Heap** → What should be handled first?
+- **HashMap** → Where is this complaint?
+- **HashSet** → Is this complaint a duplicate?
+- **BFS** → Which team is nearby?
+- **Dijkstra** → Which route is fastest?
+
+A full project report with architecture and workflow diagrams is available in [PublicComplaint_Priority_Analyzer_Project_Report.pdf](PublicComplaint_Priority_Analyzer_Project_Report.pdf).
+
+## 👨‍💻 Author
+
+**Gnanendhiran V**
+Final Year, B.Tech Information Technology — Madras Institute of Technology, Anna University, Chennai
+[GitHub](https://github.com/Gnanendhiran)
