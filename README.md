@@ -1,4 +1,4 @@
-<div align="center">
+<div align=center>
 
 # Public Complaint Priority Analyzer
 
@@ -113,34 +113,97 @@ Officers can:
 - **Algorithms:** BFS, Dijkstra, Sorting
 - **Interface:** Terminal / Console
 
-## ▶️ Run Locally
+---
 
-**Prerequisite:** Make sure Java is installed.
+## ▶️ How to Run the Project Locally
+
+### ✅ Prerequisites
+
+Make sure **Java (JDK 8 or above)** is installed on your system.
 
 ```bash
 java -version
 ```
 
-**Clone the repository**
+If not installed, download it from 👉 https://www.oracle.com/java/technologies/downloads/
+
+---
+
+### 📥 Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/Gnanendhiran/PublicComplaintPriorityAnalyzer.git
 cd PublicComplaintPriorityAnalyzer
 ```
 
-**Compile**
+---
+
+### 🔨 Step 2 — Compile the Source Code
+
+**On macOS / Linux:**
 
 ```bash
 javac -d out $(find src -name "*.java")
 ```
 
-**Run**
+**On Windows (Command Prompt):**
+
+```cmd
+dir /s /b src\*.java > sources.txt
+javac -d out @sources.txt
+```
+
+**On Windows (PowerShell):**
+
+```powershell
+$files = Get-ChildItem -Path src -Recurse -Filter "*.java" | Select-Object -ExpandProperty FullName
+javac -d out $files
+```
+
+> 📝 The -d out flag places all compiled .class files into the out/ directory.
+
+---
+
+### 🚀 Step 3 — Run the Application
+
+**On macOS / Linux / Windows:**
 
 ```bash
 java -cp out com.complaint.Main
 ```
 
-You can also open the project in IntelliJ IDEA, Eclipse, or VS Code and run `Main.java` directly.
+---
+
+### 🖥️ Run Using an IDE (Optional)
+
+You can also open and run the project directly in your preferred IDE:
+
+| IDE | Steps |
+|---|---|
+| **IntelliJ IDEA** | File → Open the project folder → Run Main.java |
+| **Eclipse** | File → Import → Existing Project → Run Main.java |
+| **VS Code** | Open folder → Install **Extension Pack for Java** → Run Main.java |
+
+---
+
+### 📁 Project Structure
+
+```
+PublicComplaintPriorityAnalyzer/
+├── src/
+│   └── com/
+│       └── complaint/
+│           ├── Main.java
+│           ├── model/
+│           ├── service/
+│           ├── dsa/
+│           └── ui/
+├── out/                  ← compiled classes (auto-created after compile step)
+├── PublicComplaint_Priority_Analyzer_Project_Report.pdf
+└── README.md
+```
+
+---
 
 ## 💡 Project Highlights
 
@@ -152,7 +215,7 @@ The core idea of this project is simple: **choose the right data structure for t
 - **BFS** → Which team is nearby?
 - **Dijkstra** → Which route is fastest?
 
-A full project report with architecture and workflow diagrams is available in [`docs/Public_Complaint_Priority_Analyzer_Project_Report.pdf`](docs/Public_Complaint_Priority_Analyzer_Project_Report.pdf).
+A full project report with architecture and workflow diagrams is available in [PublicComplaint_Priority_Analyzer_Project_Report.pdf](PublicComplaint_Priority_Analyzer_Project_Report.pdf).
 
 ## 👨‍💻 Author
 
